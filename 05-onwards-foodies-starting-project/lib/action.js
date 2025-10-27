@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { saveMeal } from "./meals";
 
 export async function shareMeal(formData) {
@@ -11,4 +12,5 @@ export async function shareMeal(formData) {
     creator_email: formData.get("email"),
   };
   await saveMeal(mealData);
+  redirect("/meals");
 }
