@@ -1,8 +1,9 @@
+"use server";
+
 import { redirect } from "next/navigation";
 import { saveMeal } from "./meals";
 
 export async function shareMeal(formData) {
-  "use server";
   const mealData = {
     title: formData.get("title"),
     summary: formData.get("summary"),
